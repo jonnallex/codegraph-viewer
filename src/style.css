@@ -904,10 +904,7 @@ div.vis-tooltip {
   .logo-container {
     gap: 0.35rem !important;
   }
-  
-  .logo-icon {
-    display: none !important; /* Hide logo icon on mobile to save space */
-  }
+
 
   header h1 {
     font-size: 0.95rem !important;
