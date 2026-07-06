@@ -1,0 +1,9 @@
+services:
+  visualizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codegraph-viewer
+    ports:
+      - "8201:80"
+    restart: always
