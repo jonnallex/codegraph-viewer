@@ -133,7 +133,7 @@
             <h2>Import CodeGraph Database</h2>
             <p>Drag and drop your <strong>codegraph.db</strong> file here, or choose one of the options below:</p>
             <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center; margin-top: 1.5rem;">
-              <button class="btn" style="width: 100%; max-width: 280px; justify-content: center;" @click.stop="$refs.fileInput.click()">
+              <button class="btn btn-no-glow" style="width: 100%; max-width: 280px; justify-content: center; box-shadow: none !important;" @click.stop="$refs.fileInput.click()">
                 Choose Database File
               </button>
               <span style="color: var(--text-muted); font-size: 0.85rem;">— or —</span>
@@ -169,7 +169,7 @@
           SQL Console
         </div>
         <div class="sidebar-tab" :class="activeTab === 'settings' ? 'active' : ''" @click="activeTab = 'settings'">
-          Visual Settings
+          Settings
         </div>
       </div>
 
@@ -280,10 +280,10 @@
             <label class="section-title">Raw SQL Query</label>
             <textarea class="sql-textarea" x-model="sqlQuery" placeholder="SELECT * FROM ..."></textarea>
             <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
-              <button class="btn" style="flex: 1; padding: 0.5rem; font-size: 0.85rem;" @click="executeCustomSql(false)">
+              <button class="btn btn-no-glow" style="justify-content: center; flex: 1; padding: 0.5rem; font-size: 0.85rem; box-shadow: none !important;" @click="executeCustomSql(false)">
                 Execute Select
               </button>
-              <button class="btn" style="flex: 1; padding: 0.5rem; font-size: 0.85rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%);" @click="executeCustomSql(true)">
+              <button class="btn btn-no-glow" style="justify-content: center; flex: 1; padding: 0.5rem; font-size: 0.85rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: none !important;" @click="executeCustomSql(true)">
                 Plot Graph Links
               </button>
             </div>
@@ -325,7 +325,7 @@
           
         </div>
 
-        <!-- Visual Settings Tab Contents -->
+        <!-- Settings Tab Contents -->
         <div x-show="activeTab === 'settings'" class="panel-section" style="display: flex; flex-direction: column; gap: 1.25rem;">
           
           <!-- Hide/Show relation types on the canvas -->
@@ -350,23 +350,6 @@
               <input type="checkbox" x-model="hideIsolated" @change="updateGraphVisibilities()">
               <span>Hide Isolated Nodes</span>
             </label>
-          </div>
-
-          <div class="panel-section">
-            <label class="section-title">Physics Engine</label>
-            <label class="filter-label" style="background: rgba(0,0,0,0.15); padding: 0.5rem;">
-              <input type="checkbox" x-model="physicsEnabled" @change="togglePhysics()">
-              <span>Enable Layout Physics</span>
-            </label>
-            <p style="font-size: 0.7rem; color: var(--text-muted);">
-              Disabling physics stops nodes from moving, making larger graphs much easier to view and interact with.
-            </p>
-          </div>
-
-          <div class="panel-section" style="border-top: 1px solid var(--panel-border); padding-top: 1rem; margin-top: 0.5rem;">
-            <button class="btn btn-danger" style="font-size: 0.85rem; padding: 0.5rem; justify-content: center;" @click="clearGraph()">
-              Clear Visualization Map
-            </button>
           </div>
           
         </div>

@@ -197,6 +197,12 @@ h1 {
   transform: translateY(-1px);
 }
 
+.btn-no-glow,
+.btn-no-glow:hover {
+  box-shadow: none !important;
+}
+
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
